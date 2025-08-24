@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+	--background: #0b0b12;
+	--foreground: #f5f6f8;
+	--muted: #9aa0a6;
+	--card: #0f1117;
+	--border: #1f2330;
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-muted: var(--muted);
+	--color-card: var(--card);
+	--color-border: var(--border);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--background: #ffffff;
+		--foreground: #171717;
+		--muted: #5f6368;
+		--card: #ffffff;
+		--border: #e5e7eb;
+	}
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.card {
+	@apply rounded-2xl border border-border bg-card/70 backdrop-blur supports-[backdrop-filter]:bg-card/50 shadow-[0_1px_0_0_rgba(255,255,255,0.03)_inset,0_10px_30px_-15px_rgba(0,0,0,0.5)];
+}
+
+.section-title {
+	@apply text-3xl sm:text-4xl font-semibold tracking-tight;
+}
+
+.section-subtitle {
+	@apply text-base text-muted;
+}
